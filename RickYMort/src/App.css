@@ -2,7 +2,7 @@
    text-align: center;
 }
 
-.cartas{
+.cartas {
    width: 85%;
    margin: 0 auto;
    display: grid;
@@ -10,20 +10,48 @@
    grid-gap: 20px;
 }
 
-.nav{
+.nav {
    background-color: cornflowerblue;
    padding: 20px 20px;
 }
 
-.card{
+.card {
    background-color: #ffffff05;
    backdrop-filter: blur(3px);
 }
 
-.abouth1{
+.abouth1 {
    background-color: aliceblue;
 }
 
-.detail{
+.detail {
    background-color: aliceblue;
+}
+
+.textError {
+   text-align: center;
+   color: aliceblue;
+   position: absolute;
+   top: 10px;
+   left: 10px;
+}
+
+.contenedor {
+   position: relative;
+   display: inline-block;
+   text-align: center;
+}
+
+.centrado {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.error404{
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   height: 100vh;
 }

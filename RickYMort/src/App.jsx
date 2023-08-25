@@ -1,27 +1,34 @@
 import './App.css';
 import Cards from './components/Cards.jsx';
-import { useState } from 'react';
+import { useState, useLocation, useEffect } from 'react';
 import axios from "axios";
 import Nav from './components/Nav';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import About from './components/About';
 import Detail from './components/Detail';
+import ErrorPage from './components/ErrorPage';
+import Form from './components/Form';
 
 function App() {
 
-   const example = {
-      id: 1,
-      name: 'Rick Sanchez',
-      status: 'Alive',
-      species: 'Human',
-      gender: 'Male',
-      origin: {
-         name: 'Earth (C-137)',
-         url: 'https://rickandmortyapi.com/api/location/1',
-      },
-      image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-   };
+   const navigate = useNavigate()
+   const [access, setAccess] = useState(false);
+   const EMAIL = "juanmpaola25@gmail.com";
+   const PASSWORD = "asdasd123";
 
+   function login(data) {
+      if (data.email === EMAIL && data.password === PASSWORD) {
+         setAccess(true)
+         navigate('/home')
+      }
+
+   }
+
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
+   
    const [characters, setCharacters] = useState([])
 
    function onClose(id) {
@@ -46,9 +53,6 @@ function App() {
       });
    }*/
 
-   
-   
-
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
@@ -59,16 +63,24 @@ function App() {
       });
    }
 
+   // const location = useLocation()
+   // useLocation().path === "/" ? <Nav onSearch={onSearch}/> : <Form/> 
+
    return (<>
-      <Nav onSearch={onSearch} />
+
       <div className='App'>
+
+         <Nav onSearch={onSearch} />
+
+
          <Routes>
+            <Route path='/' element={<Form login={login} />} />
             <Route path='/about' element={<About />} />
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
-            <Route path='/detail/:id' element={<Detail/>} />
-            
+            <Route path='/detail/:id' element={<Detail />} />
+            <Route path="*" element={<ErrorPage />} />
          </Routes>
-         
+
       </div>
    </>
    );
