@@ -55,3 +55,20 @@
    background-attachment: fixed;
    height: 100vh;
 }
+
+.formdiv{
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   margin: 300px;
+}
+
+.form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 400px;
+   background-color: aliceblue;
+
+}

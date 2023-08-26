@@ -28,7 +28,19 @@ function form({login}) {
 
     }
 
-    const Trex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+    function diseableHandler(){
+        let disable;
+        for (let error in errors){
+            if(errors[error]=== "")disable = false;
+            else {
+                disable = true
+                break;
+            }
+        }
+        return disable;
+    }
+
+    const Trex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,3}$/;
 
     function validation(data) {
         let errors = {}
@@ -59,9 +71,8 @@ function form({login}) {
     }
 
     return (
-        <>
-
-            <form>
+        <div className="formdiv">
+            <form className="form">
                 <label htmlFor="email">Email:</label>
                 <input name="email"
                     type="text"
@@ -69,6 +80,8 @@ function form({login}) {
                     value={data.email}
                     onChange={handleChange} />
                 {errors.email ? <p>{errors.email}</p> : null}
+
+                <br />
 
                 <label htmlFor="">Password:</label>
                 <input name="password"
@@ -79,10 +92,11 @@ function form({login}) {
                 {errors.password ? <p>{errors.password}</p> : null}
 
 
-                <button onClick={handleSumbit}>Sumbit</button>
+                <button type="sumbit"onClick={handleSumbit} disabled={diseableHandler()}>Sumbit</button>
             </form>
 
-        </>
+
+        </div>
     )
 }
 
