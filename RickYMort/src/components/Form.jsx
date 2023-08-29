@@ -1,8 +1,8 @@
 import { useState } from "react";
-import validation from "../../validation";
+//import validation from "../../validation";
 
 //onChange={handleChange()}
-function form({login}) {
+function form({ login }) {
 
     const [data, setData] = useState({
         email: '',
@@ -25,13 +25,12 @@ function form({login}) {
                 [event.target.name]: event.target.value
             })
         )
-
     }
 
-    function diseableHandler(){
+    function diseableHandler() {
         let disable;
-        for (let error in errors){
-            if(errors[error]=== "")disable = false;
+        for (let error in errors) {
+            if (errors[error] === "") disable = false;
             else {
                 disable = true
                 break;
@@ -65,37 +64,33 @@ function form({login}) {
         return errors;
     }
 
-    function handleSumbit(e){
+    function handleSumbit(e) {
         e.preventDefault()
         login(data)
     }
 
     return (
-        <div className="formdiv">
-            <form className="form">
-                <label htmlFor="email">Email:</label>
-                <input name="email"
-                    type="text"
-                    placeholder="Enter your email here"
-                    value={data.email}
-                    onChange={handleChange} />
-                {errors.email ? <p>{errors.email}</p> : null}
-
-                <br />
-
-                <label htmlFor="">Password:</label>
-                <input name="password"
-                    type="password"
-                    placeholder="Enter your passwor here"
-                    value={data.password}
-                    onChange={handleChange} />
-                {errors.password ? <p>{errors.password}</p> : null}
-
-
-                <button type="sumbit"onClick={handleSumbit} disabled={diseableHandler()}>Sumbit</button>
+        <div class="login-box">
+            <form>
+                <div class="user-box">
+                    <input type="text" name="email"
+                        value={data.email} onChange={handleChange} required="" />
+                    <label>Username</label>
+                    {errors.email ? <p className="formerror">{errors.email}</p> : null}
+                </div>
+                <div class="user-box">
+                    <input type="password" name="password"
+                        value={data.password} onChange={handleChange} />
+                    <label>Password</label>
+                    {errors.password ? <p className="formerror">{errors.password}</p> : null}
+                </div><center>
+                  
+                    <a href="#" type="submit" value="Log in" 
+                    onClick={handleSumbit} disabled={diseableHandler()}>
+                        SEND
+                        <span></span>
+                    </a></center>
             </form>
-
-
         </div>
     )
 }

@@ -17,6 +17,8 @@ const Nav = (props) => {
 
       <NavLink to='/home'>Home</NavLink>
 
+      <NavLink to= '/favorites'>Favorites</NavLink>
+
       <SearchBar onSearch={onSearch} />
 
     </div>
