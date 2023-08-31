@@ -70,15 +70,15 @@ function form({ login }) {
     }
 
     return (
-        <div class="login-box">
+        <div className="login-box">
             <form>
-                <div class="user-box">
+                <div className="user-box">
                     <input type="text" name="email"
                         value={data.email} onChange={handleChange} required="" />
                     <label>Username</label>
                     {errors.email ? <p className="formerror">{errors.email}</p> : null}
                 </div>
-                <div class="user-box">
+                <div className="user-box">
                     <input type="password" name="password"
                         value={data.password} onChange={handleChange} />
                     <label>Password</label>

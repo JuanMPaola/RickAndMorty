@@ -6,9 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image:url("https://images.squarespace-cdn.com/content/v1/51548a58e4b0cf906c653f22/1554172376096-TR4JO5FMMHRPCDWHTB11/Comp_1.gif?format=1500w");
-  background-size: cover;
-  background-repeat: no-repeat;
-
+/*   background-size: cover;
+  background-repeat: no-repeat; */
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
 }
 
 code {
