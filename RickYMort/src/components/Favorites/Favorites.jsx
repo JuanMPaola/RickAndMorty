@@ -1,6 +1,6 @@
 import React from 'react'
-import Cards from './Cards'
-import { filterCards,orderCards } from '../redux/actions'
+import Cards from '../Cards/Cards'
+import { filterCards,orderCards } from '../../redux/actions'
 import { useDispatch} from 'react-redux'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'

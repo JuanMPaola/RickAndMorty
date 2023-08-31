@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { addFav, removeFav } from "../redux/actions";
+import { addFav, removeFav } from "../../redux/actions";
 import { connect } from 'react-redux'
 import { useState, useEffect } from "react";
-
+import style from './Card.module.css'
 
 
 
@@ -14,7 +14,7 @@ export function Card({ character, onClose, myFavorites, addFav, removeFav }) {
       if (isFav === true) {
          setIsFav(false)
          removeFav(character.id)
-      }else{
+      } else {
          setIsFav(true)
          addFav(character, onClose)
       }
@@ -29,27 +29,32 @@ export function Card({ character, onClose, myFavorites, addFav, removeFav }) {
    }, [myFavorites]);
 
    return (
-      <div className="card">
-         {
-            <button onClick={()=>handleFavorite(character)}>{isFav ? '❤️' : '🤍'}</button>
-         }
-         
-         <button onClick={onClose} >X</button>
-         <br />
+      <div className={style.conteiner}>
+         <div className={style.buttons}>
+            <p>{character.id}</p>
+
+            {<button className={style.heart} onClick={() => handleFavorite(character)}>{isFav ? '❤️' : '🤍'}</button>}
+
+            <button className={style.close} onClick={onClose} >X</button>
+         </div>
+
 
          <img src={character.image} alt='' />
-         <Link to={`/detail/${character.id}`}>
-            <h2>{character.name}</h2>
+         <Link to={`/detail/${character.id}`} style={{textDecoration:"none"}}>
+            <h3 className={style.nombre}>{character.name}</h3>
          </Link>
-         <h2>{character.status}</h2>
-         <h2>{character.species}</h2>
-         <h2>{character.gender}</h2>
+         <div className={style.cardInfo}>
+            <p>Status: {character.status}</p>
+            <p>Species: {character.species}</p>
+            <p>Gender: {character.gender}</p>
+         </div>
+
       </div>
    );
 }
 
-function mapStateToProps(state){
-   return {myFavorites: state.myFavorites}
+function mapStateToProps(state) {
+   return { myFavorites: state.myFavorites }
 }
 
 function mapDispatchToProps(dispatch) {

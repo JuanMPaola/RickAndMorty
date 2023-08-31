@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 //import validation from "../../validation";
 
 //onChange={handleChange()}
@@ -39,7 +39,7 @@ function form({ login }) {
         return disable;
     }
 
-    const Trex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,3}$/;
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,3}$/;
 
     function validation(data) {
         let errors = {}
@@ -47,7 +47,7 @@ function form({ login }) {
             errors.email = 'Ingresa un mail'
         }
 
-        if (!Trex.test(data.email)) {
+        if (!regex.test(data.email)) {
             errors.email = 'El email es invalido'
         }
 
@@ -69,6 +69,14 @@ function form({ login }) {
         login(data)
     }
 
+    useEffect(() => {
+        document.body.style.backgroundImage = `url("https://images.squarespace-cdn.com/content/v1/51548a58e4b0cf906c653f22/1554172376096-TR4JO5FMMHRPCDWHTB11/Comp_1.gif?format=1500w")`;
+
+        return () => {
+            document.body.style.backgroundImage = null
+        }
+    }, []);
+
     return (
         <div className="login-box">
             <form>
@@ -84,9 +92,9 @@ function form({ login }) {
                     <label>Password</label>
                     {errors.password ? <p className="formerror">{errors.password}</p> : null}
                 </div><center>
-                  
-                    <a href="#" type="submit" value="Log in" 
-                    onClick={handleSumbit} disabled={diseableHandler()}>
+
+                    <a href="#" type="submit" value="Log in"
+                        onClick={handleSumbit} disabled={diseableHandler()}>
                         SEND
                         <span></span>
                     </a></center>

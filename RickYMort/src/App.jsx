@@ -1,14 +1,14 @@
 import './App.css';
-import Cards from './components/Cards.jsx';
+import Cards from './components/Cards/Cards.jsx';
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import Nav from './components/Nav';
+import Nav from './components/Nav/Nav';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import About from './components/About';
-import Detail from './components/Detail';
-import ErrorPage from './components/ErrorPage';
-import Form from './components/Form';
-import Favorites from './components/Favorites';
+import About from './components/About/About';
+import Detail from './components/Detail/Detail';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites';
 
 function App() {
 
@@ -49,7 +49,7 @@ function App() {
    }
 
 
-   /*
+   
    function randomHandler() {
       let randomId = (Math.random() * 826).toFixed()
       randomId = Number(randomId)
@@ -61,7 +61,7 @@ function App() {
             window.alert('¡No hay personajes con este ID!');
          }
       });
-   }*/
+   }
 
    function onSearch(id) {
       if (id > 826) {
@@ -84,7 +84,7 @@ function App() {
 
       <div className='App'>
 
-         <Nav onSearch={onSearch} />
+         <Nav onSearch={onSearch} randomHandler={randomHandler}/>
 
          <Routes>
 

@@ -1,0 +1,8 @@
+.conteiner{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.conteiner img{
+    border-radius: 50%;
+}

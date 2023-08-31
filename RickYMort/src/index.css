@@ -5,16 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image:url("https://images.squarespace-cdn.com/content/v1/51548a58e4b0cf906c653f22/1554172376096-TR4JO5FMMHRPCDWHTB11/Comp_1.gif?format=1500w");
-/*   background-size: cover;
-  background-repeat: no-repeat; */
-background-size: 100% 100%;
-background-repeat: no-repeat;
-background-attachment: fixed;
+  background-image:url("https://preview.redd.it/zn2m9e2cxvf51.jpg?width=1080&crop=smart&auto=webp&s=64afdc2d54f4fb37327d261029b52f294734e414"); 
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
