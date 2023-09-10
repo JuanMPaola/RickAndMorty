@@ -16,15 +16,28 @@ function App() {
    const [access, setAccess] = useState(false);
    const EMAIL = "juanmpaola25@gmail.com";
    const PASSWORD = "asdasd123";
-
-   function login(data) {
-      if (data.email === EMAIL && data.password === PASSWORD) {
-         setAccess(true)
-         navigate('/home')
+   
+/*
+      function login(data) {
+         if (data.email === EMAIL && data.password === PASSWORD) {
+            setAccess(true)
+            navigate('/home')
+         }
+   
       }
+*/
 
+   function login(userData) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      });
    }
 
+   
    useEffect(() => {
       !access && navigate('/');
    }, [access]);
@@ -41,15 +54,15 @@ function App() {
    }
 
 
-   function searchId(id){
-      for (let i = 0; i < characters.length ; i++){
+   function searchId(id) {
+      for (let i = 0; i < characters.length; i++) {
          if (characters[i].id == id) return true
       }
       return false
    }
 
 
-   
+
    function randomHandler() {
       let randomId = (Math.random() * 826).toFixed()
       randomId = Number(randomId)
@@ -68,7 +81,7 @@ function App() {
          return window.alert('¡No hay personajes con este ID!')
       } else if (isNaN(id)) {
          return window.alert(' Solo se pueden agregar personajes con numeros ID')
-      } else if (searchId(id)){
+      } else if (searchId(id)) {
          return window.alert(' Ya esta agregado este personaje ')
       }
       axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
@@ -84,7 +97,7 @@ function App() {
 
       <div className='App'>
 
-         <Nav onSearch={onSearch} randomHandler={randomHandler}/>
+         <Nav onSearch={onSearch} randomHandler={randomHandler} />
 
          <Routes>
 
@@ -92,7 +105,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
             <Route path='/detail/:id' element={<Detail />} />
-            <Route path='/favorites' element={<Favorites/>} />
+            <Route path='/favorites' element={<Favorites />} />
             <Route path="*" element={<ErrorPage />} />
 
          </Routes>

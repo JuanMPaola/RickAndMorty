@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: aliceblue;
+    background-color: rgb(42, 45, 48);
     padding: 8px;
 
 
@@ -42,10 +42,10 @@
     height: 100%;
     border-radius: 12px;
     background: linear-gradient(to left,
-            hsl(340deg 100% 16%) 0%,
-            hsl(340deg 100% 32%) 8%,
-            hsl(340deg 100% 32%) 92%,
-            hsl(340deg 100% 16%) 100%);
+            hsl(130, 100%, 16%) 0%,
+            hsl(128, 100%, 32%) 8%,
+            hsl(113, 100%, 32%) 92%,
+            hsl(130, 100%, 16%) 100%);
 }
 
 .frontText {
@@ -55,7 +55,7 @@
     border-radius: 12px;
     font-size: 1.1rem;
     color: white;
-    background: hsl(345deg 100% 47%);
+    background: hsl(101, 100%, 47%);
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);

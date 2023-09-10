@@ -21,11 +21,11 @@ export function Card({ character, onClose, myFavorites, addFav, removeFav }) {
    }
 
    useEffect(() => {
-      myFavorites.forEach((fav) => {
-         if (fav.id === character.id) {
-            setIsFav(true);
-         }
-      });
+     myFavorites.forEach((fav)=> {
+      if (fav.id === character.id) {
+         setIsFav(true);
+      }
+     });
    }, [myFavorites]);
 
    return (

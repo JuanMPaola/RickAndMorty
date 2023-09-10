@@ -11,16 +11,11 @@ export default function reducer(state = initialState, { type, payload }) {
     let ordenados;
     switch (type) {
         case ADD_FAV:
-            return {
-                ...state,
-                myFavorites: [...state.myFavorites, payload],
-                allCharacters: [...state.myFavorites, payload]
-            }
+            return { ...state, myFavorites: payload, allCharacters: payload };
+
         case REMOVE_FAV:
-            return {
-                ...state,
-                myFavorites: state.myFavorites.filter((character) => character.id !== Number(payload))
-            }
+            return { ...state, myFavorites: payload };
+    
         case FILTER:
             return {
                 ...state,
