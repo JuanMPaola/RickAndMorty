@@ -14,8 +14,12 @@ export default function reducer(state = initialState, { type, payload }) {
             return { ...state, myFavorites: payload, allCharacters: payload };
 
         case REMOVE_FAV:
-            return { ...state, myFavorites: payload };
-    
+            return {
+                ...state,
+                myFavorites: payload,
+                allCharacters: payload
+            };
+
         case FILTER:
             return {
                 ...state,

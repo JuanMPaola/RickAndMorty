@@ -14,29 +14,20 @@ function App() {
 
    const navigate = useNavigate()
    const [access, setAccess] = useState(false);
-   const EMAIL = "juanmpaola25@gmail.com";
-   const PASSWORD = "asdasd123";
-   
-/*
-      function login(data) {
-         if (data.email === EMAIL && data.password === PASSWORD) {
-            setAccess(true)
-            navigate('/home')
-         }
-   
-      }
-*/
 
-   function login(userData) {
-      const { email, password } = userData;
+   const login = async (userData) =>{
+      const {email, password} = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
+      try {
+         const {data} = await axios(URL + `?email=${email}&password=${password}`)
+         const {access} = data;
          setAccess(data);
          access && navigate('/home');
-      });
+      } catch (error) {
+         console.log("Le pifiaste flaco")
+      }
+   
    }
-
    
    useEffect(() => {
       !access && navigate('/');
@@ -52,7 +43,8 @@ function App() {
 
       setCharacters(filteredCharacters)
    }
-
+   
+   console.log(onClose)
 
    function searchId(id) {
       for (let i = 0; i < characters.length; i++) {
@@ -60,8 +52,6 @@ function App() {
       }
       return false
    }
-
-
 
    function randomHandler() {
       let randomId = (Math.random() * 826).toFixed()
@@ -76,22 +66,25 @@ function App() {
       });
    }
 
-   function onSearch(id) {
+   const onSearch = async (id) => {
       if (id > 826) {
          return window.alert('¡No hay personajes con este ID!')
       } else if (isNaN(id)) {
          return window.alert(' Solo se pueden agregar personajes con numeros ID')
       } else if (searchId(id)) {
-         return window.alert(' Ya esta agregado este personaje ')
+         return window.alert(" Ya esta agregado este personaje ")
       }
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+      try {
+         const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('Ingresa un ID para poder agregar un personaje.');
-         }
-      });
+         } 
+      } catch (error) {
+         window.alert("Ingresa un ID para poder agregar un personaje")
+      }
    }
+
+
 
    return (<>
 
