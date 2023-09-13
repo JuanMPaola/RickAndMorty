@@ -1,8 +1,8 @@
 .conteiner {
     box-sizing: border-box;
     margin: 10%;
-    background: rgba(217, 217, 217, 0.58);
-    border: 1px solid white;
+    background: rgb(19, 21, 22);
+    border: 1px solid rgb(0, 0, 0);
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
     border-radius: 17px;
@@ -13,7 +13,6 @@
     justify-content: center;
     user-select: none;
     font-weight: bolder;
-    color: black;
 }
 
 .conteiner img {
@@ -36,24 +35,34 @@
 
 .buttons p {
     padding: 3px;
-    background: rgba(217, 217, 217, 0.726);
-    border: 1px solid white;
+    background: rgb(19, 21, 22);
+    color: aquamarine;
+    background-size: 5px;
     border-radius: 17px;
 }
 
-.close{
-    color: red;
-    font-weight: 650;
-    margin-right: 2%;
+.close {
+
+    font-size: 1px;
 }
 
-.cardInfo{
+.cardInfo {
     text-align: left;
     display: flex;
     flex-direction: column;
 }
+.cardInfo p:nth-child(1){
+    color: blueviolet;
+}
+.cardInfo p:nth-child(2){
+    color: blueviolet;
+}
+.cardInfo p:nth-child(3){
+    color: aqua;
+}
 
-.nombre{
+
+.nombre {
     color: aliceblue;
     transform: translateY(-30px);
     background-color: black;

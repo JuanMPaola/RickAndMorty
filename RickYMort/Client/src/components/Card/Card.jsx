@@ -35,7 +35,7 @@ export function Card({ character, onClose, myFavorites, addFav, removeFav }) {
 
             {<button className={style.heart} onClick={() => handleFavorite(character)}>{isFav ? '❤️' : '🤍'}</button>}
 
-            <button className={style.close} onClick={onClose} >X</button>
+            <button onClick={onClose} ><h5>❌</h5></button>
          </div>
 
 
@@ -44,9 +44,9 @@ export function Card({ character, onClose, myFavorites, addFav, removeFav }) {
             <h3 className={style.nombre}>{character.name}</h3>
          </Link>
          <div className={style.cardInfo}>
-            <p>Status: {character.status}</p>
-            <p>Species: {character.species}</p>
-            <p>Gender: {character.gender}</p>
+            <p >Status: {character.status}</p>
+            <p >Species: {character.species}</p>
+            <p >Gender: {character.gender}</p>
          </div>
 
       </div>

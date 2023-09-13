@@ -4,6 +4,7 @@ import { filterCards,orderCards } from '../../redux/actions'
 import { useDispatch} from 'react-redux'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import style from "./Favorites.module.css"
 
 export default function Favorites () {
 
@@ -25,12 +26,14 @@ export default function Favorites () {
 
 
     return (
-        <div>
-            <select onChange={handleOrder} name="" id="">
+        <div className={style.conteiner}>
+            <select className={style.order} onChange={handleOrder} name="" id="">
+                <option value="" disabled selected>ORDER</option>
                 <option value="Ascendente">Ascendente</option>
                 <option value="Descendente">Descendente</option>
             </select>
-            <select onChange={handleFilter}name="" id="">
+            <select className={style.gender} onChange={handleFilter}name="" id="">
+                <option value="" disabled selected>GENDER</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Genderless">Genderless</option>

@@ -25,17 +25,21 @@ function detail() {
             {character.name ? (
                 <>
                     <div>
-                        <img src={character.image} alt='' />
+                        <img className={style.imagen} src={character.image} alt='' />
                     </div>
 
                     <div className={style.nombre}>
-                        <h1>{character.origin?.name}</h1>
+
                     </div>
 
-                    <h2>Status: {character.status}</h2>
-                    <h2>Species: {character.species}</h2>
-                    <h2>Gemder: {character.gender}</h2>
-                    <h2>Location: {character.location?.name}</h2>
+                    <div className={style.info}>
+                        <h1>{character.origin?.name}</h1>
+                        <h2>Status: {character.status}</h2>
+                        <h2>Species: {character.species}</h2>
+                        <h2>Gemder: {character.gender}</h2>
+                        <h2>Location: {character.location?.name}</h2>
+                    </div>
+
 
                 </>
             ) : (

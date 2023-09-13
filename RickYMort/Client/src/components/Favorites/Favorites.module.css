@@ -1,0 +1,26 @@
+.conteiner {
+/*     background-color: rgb(51, 51, 51);
+    height: 40px; */
+}
+
+.conteiner select {
+    background-color: rgb(19, 21, 22);
+    margin: 5px;
+    border-radius: 20px;
+    height: 28px;
+
+    border-width: 2px;
+    font-size: 15px;
+}
+
+.order {
+    border-color: aquamarine;
+    color: aquamarine;
+
+}
+
+.gender {
+    color: aqua;
+    border-color: aqua;
+    
+}

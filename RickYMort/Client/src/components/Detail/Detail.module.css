@@ -1,8 +1,32 @@
-.conteiner{
-display: flex;
-flex-direction: row;
-justify-content: center;
+.conteiner {
+    /* box-sizing: border-box;
+    margin: 10%;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+    max-width: 600px; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
 }
-.conteiner img{
-    border-radius: 50%;
+
+.imagen {
+    border-radius: 100%;
+}
+
+.info{
+    flex-direction: column;
 }
