@@ -14,22 +14,6 @@ const getCharById = async (req, res)=>{
     }
 }
 
-/* const getCharById = (req, res) => {
-    const {id} = req.params;
-
-    axios(URL+id)
-    .then(response => response.data)
-    .then(({id, status, name, species, origin, image, gender}) => {
-        if(id){
-            const character = {id, status, name, species, origin, image, gender}
-            return res.status(200).json(character);
-        }
-        else return res.status(404).send("Not found")
-    })
-    .catch(err => {
-        res.status(500).send({message: err.message});
-    })
-}*/
 
 module.exports = {
     getCharById 

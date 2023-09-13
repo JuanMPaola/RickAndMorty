@@ -7,12 +7,12 @@ import { useSelector } from 'react-redux'
 
 export default function Favorites () {
 
+    const dispatch = useDispatch();
+
     const myFavorites = useSelector((state) => state.myFavorites)
     console.log(myFavorites)
 
     const [aux, setAux] = useState(false);
-
-    const dispatch = useDispatch();
 
     function handleOrder(event){
         dispatch(orderCards(event.target.value))

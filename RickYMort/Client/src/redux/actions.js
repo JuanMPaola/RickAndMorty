@@ -1,9 +1,10 @@
+import axios from "axios";
+
 export const ADD_FAV = "ADD_FAV"
 export const REMOVE_FAV = "REMOVE_FAV"
 export const FILTER = "FILTER"
 export const ORDER = "ORDER"
 
-import axios from "axios";
 
 export const addFav = (character) => {
    return async (dispatch) => {
@@ -17,25 +18,27 @@ export const addFav = (character) => {
             });
          }
       } catch (error) {
-
+         console.log(error)
       }
    };
 };
 
 export const removeFav = (id) => {
-   const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id; // Agrega una barra diagonal antes del ID
-   try {
-      return async (dispatch) => { // Quita el try/catch de afuera
+   const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
+   return async (dispatch) => {
+      try {
+
          const { data } = await axios.delete(endpoint);
          if (data) {
-            dispatch({
+            return dispatch({
                type: REMOVE_FAV,
                payload: data,
             });
-         };
-      }
-   } catch (error) {
+         }
 
+      } catch (error) {
+         console.log(error)
+      }
    }
 };
 
