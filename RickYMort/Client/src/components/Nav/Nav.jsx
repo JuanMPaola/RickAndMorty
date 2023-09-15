@@ -15,13 +15,6 @@ const Nav = (props) => {
   return (
     <div className={style.conteiner}>
 
-      <NavLink to='/About' >
-        <button><span className={style.shadow}></span>
-          <span className={style.edge}></span>
-          <span className={style.frontText}> About
-          </span></button>
-      </NavLink>
-
       <NavLink to='/home' >
         <button><span className={style.shadow}></span>
           <span className={style.edge}></span>
@@ -29,13 +22,25 @@ const Nav = (props) => {
           </span></button>
       </NavLink>
 
-      <NavLink to='/favorites' ><button><span className={style.shadow}></span>
-        <span className={style.edge}></span>
-        <span className={style.frontText}> Favorites
-        </span></button>
-      </NavLink>
+      <div>
 
-      <SearchBar onSearch={onSearch} location={location} randomHandler={randomHandler} />
+        <NavLink to='/favorites' ><button><span className={style.shadow}></span>
+          <span className={style.edge}></span>
+          <span className={style.frontText}> Favorites
+          </span></button>
+        </NavLink>
+
+        <SearchBar onSearch={onSearch} location={location} randomHandler={randomHandler} />
+
+
+      </div>
+
+      <NavLink to='/About' >
+        <button><span className={style.shadow}></span>
+          <span className={style.edge}></span>
+          <span className={style.frontText}> About
+          </span></button>
+      </NavLink>
 
     </div >
   )

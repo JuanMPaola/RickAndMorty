@@ -21,16 +21,16 @@ export function Card({ character, onClose, myFavorites, addFav, removeFav }) {
    }
 
    useEffect(() => {
-     myFavorites.forEach((fav)=> {
-      if (fav.id === character.id) {
-         setIsFav(true);
-      }
-     });
+      myFavorites.forEach((fav) => {
+         if (fav.id === character.id) {
+            setIsFav(true);
+         }
+      });
    }, [myFavorites]);
 
    return (
       <div className={style.conteiner}>
-         <div className={style.buttons}>
+         <div className={style.divButtons}>
             <p>{character.id}</p>
 
             {<button className={style.heart} onClick={() => handleFavorite(character)}>{isFav ? '❤️' : '🤍'}</button>}
@@ -40,7 +40,7 @@ export function Card({ character, onClose, myFavorites, addFav, removeFav }) {
 
 
          <img src={character.image} alt='' />
-         <Link to={`/detail/${character.id}`} style={{textDecoration:"none"}}>
+         <Link to={`/detail/${character.id}`} style={{ textDecoration: "none" }}>
             <h3 className={style.nombre}>{character.name}</h3>
          </Link>
          <div className={style.cardInfo}>

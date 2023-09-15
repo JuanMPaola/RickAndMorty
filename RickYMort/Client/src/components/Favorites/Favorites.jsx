@@ -29,8 +29,8 @@ export default function Favorites () {
         <div className={style.conteiner}>
             <select className={style.order} onChange={handleOrder} name="" id="">
                 <option value="" disabled selected>ORDER</option>
-                <option value="Ascendente">Ascendente</option>
-                <option value="Descendente">Descendente</option>
+                <option value="Ascendente">Ascendent</option>
+                <option value="Descendente">Descendent</option>
             </select>
             <select className={style.gender} onChange={handleFilter}name="" id="">
                 <option value="" disabled selected>GENDER</option>

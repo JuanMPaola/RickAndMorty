@@ -24,20 +24,16 @@ function detail() {
         <div className={style.conteiner}>
             {character.name ? (
                 <>
+
+                    <img src={character.image} alt='' />
+
+
                     <div>
-                        <img className={style.imagen} src={character.image} alt='' />
-                    </div>
-
-                    <div className={style.nombre}>
-
-                    </div>
-
-                    <div className={style.info}>
                         <h1>{character.origin?.name}</h1>
-                        <h2>Status: {character.status}</h2>
-                        <h2>Species: {character.species}</h2>
-                        <h2>Gemder: {character.gender}</h2>
-                        <h2>Location: {character.location?.name}</h2>
+                        <p>Status:</p> <h2>{character.status}</h2>
+                        <p>Species:</p><h2> {character.species}</h2>
+                        <p>Gemder: </p><h2>{character.gender}</h2>
+                        <p>Location:</p><h2> {character.location?.name}</h2>
                     </div>
 
 

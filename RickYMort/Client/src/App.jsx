@@ -38,7 +38,7 @@ function App() {
 
    function onClose(id) {
       let filteredCharacters = characters.filter(
-         (character) => character.id !== Number(id)
+         (character) => Number(character.id) !== Number(id)
       );
       setCharacters(filteredCharacters)
    }
@@ -49,20 +49,6 @@ function App() {
       }
       return false
    }
-
-   /* function randomHandler() {
-      let randomId = (Math.random() * 826).toFixed()
-      randomId = Number(randomId)
-
-      axios(`http://localhost:3001/rickandmorty/character/${randomId}`).then(({ data }) => {
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
-      });
-   }
- */
 
    async function randomHandler(){
       try {
@@ -83,8 +69,6 @@ function App() {
       }
   }
 
-
-
    const onSearch = async (id) => {
       if (id > 826) {
          return window.alert('¡No hay personajes con este ID!');
@@ -103,10 +87,7 @@ function App() {
       }
    }
 
-
-
    return (<>
-
       <div className='App'>
 
          <Nav onSearch={onSearch} randomHandler={randomHandler} />

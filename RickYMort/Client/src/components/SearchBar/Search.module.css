@@ -1,0 +1,22 @@
+.conteiner button{
+    
+    background-color: rgb(198, 35, 212);
+    padding: 5px;
+    margin: 5px;
+    font-size: large;
+    border-radius: 10px;
+    height: 34px;
+}
+
+.conteiner input{
+    font-size: small;
+    border-radius: 10px;
+    height: 34px;
+    margin: 5px;
+
+}
+
+.conteiner div {
+    display: flex;
+    align-items:end;
+}
