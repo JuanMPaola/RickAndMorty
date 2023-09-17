@@ -40,8 +40,9 @@
     color: aquamarine;
     padding-bottom: 0%;
     display: flex;
-
     position: relative;
+    border-bottom-right-radius: 5px;
+    height: 26px;
 }
 
 .close {

@@ -1,0 +1,33 @@
+.conteiner {
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    background: rgb(19, 21, 22);
+    border: 5px solid rgb(0, 0, 0);
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    color:azure;
+
+    user-select: none;
+    width: 200px;
+    margin-top: 150px;
+
+}
+
+
+.buttons{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.buttons img{
+    height: 40px;
+}

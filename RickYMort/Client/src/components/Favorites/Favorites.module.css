@@ -1,11 +1,18 @@
+.conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .conteiner select {
     background-color: rgb(19, 21, 22);
     margin: 5px;
     border-radius: 20px;
     height: 28px;
-
     border-width: 2px;
     font-size: 15px;
+
+
 }
 
 .order {
@@ -17,5 +24,5 @@
 .gender {
     color: aqua;
     border-color: aqua;
-    
+
 }
