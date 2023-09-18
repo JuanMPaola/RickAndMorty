@@ -15,6 +15,12 @@
     font-weight: bolder;
 }
 
+.conteiner h3{
+    color: aliceblue;
+    transform: translateY(-30px);
+    background-color: black;
+}
+
 .conteiner img {
     border-radius: 17px;
     transform: translateY(-32px);
@@ -31,8 +37,9 @@
     cursor: pointer;
     background-color: transparent;
     font-size: x-large;
-    
+
 }
+
 
 .divButtons p {
     padding-right: 5px;
@@ -49,25 +56,33 @@
     font-size: 1px;
 }
 
-.cardInfo {
-    text-align: left;
+.infoContainer {
+
+    max-width: 400px; 
+
+}
+
+.infoContainer p{
+    color: rgb(165, 164, 164);
+    padding-left: 5px;
+}
+
+.infoContainer h4{
+    padding-left: 5px;
+}
+
+.infoRow {
     display: flex;
-    flex-direction: column;
-}
-.cardInfo p:nth-child(1){
-    color: blueviolet;
-}
-.cardInfo p:nth-child(2){
-    color: blueviolet;
-}
-.cardInfo p:nth-child(3){
-    color: aqua;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre las filas de información */
 }
 
-
-.nombre {
-    color: aliceblue;
-    transform: translateY(-30px);
-    background-color: black;
-    border-radius: 20px;
+.detail {
+    background-color: blueviolet;
+    padding: 3px;
+    font-weight: bold;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }

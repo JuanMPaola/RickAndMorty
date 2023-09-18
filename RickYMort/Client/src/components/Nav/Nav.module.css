@@ -13,6 +13,7 @@
     margin: 5px;
     font-size: large;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .conteiner div {

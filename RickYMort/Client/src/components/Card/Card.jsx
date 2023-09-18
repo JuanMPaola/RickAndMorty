@@ -38,16 +38,25 @@ export function Card({ character, onClose, myFavorites, addFav, removeFav }) {
             <button onClick={onClose} ><h5>❌</h5></button>
          </div>
 
+         <img src={character.image} alt={character.name} />
 
-         <img src={character.image} alt='' />
-         <Link to={`/detail/${character.id}`} style={{ textDecoration: "none" }}>
-            <h3 className={style.nombre}>{character.name}</h3>
-         </Link>
-         <div className={style.cardInfo}>
-            <p >Status: {character.status}</p>
-            <p >Species: {character.species}</p>
-            <p >Gender: {character.gender}</p>
+         <h3>{character.name}</h3>
+
+         <div className={style.infoContainer}>
+
+            <div className={style.infoRow}>
+               <p >Species: </p>
+               <h4>{character.species}</h4>
+            </div>
+
+            <div className={style.infoRow}>
+               <p >Gender: </p>
+               <h4 style={{color: "aqua"}}>{character.gender}</h4>
+            </div>
          </div>
+         <Link to={`/detail/${character.id}`} style={{ textDecoration: "none" }}>
+            <button className={style.detail} >Detail</button>
+         </Link>
 
       </div>
    );

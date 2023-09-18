@@ -82,13 +82,15 @@ function form({ login }) {
             <form>
                 <div className="user-box">
                     <input type="text" name="email"
-                        value={data.email} onChange={handleChange} required="" />
+                        value={data.email} onChange={handleChange} required=""
+                        placeholder="ejemplo@gmail.com" />
                     <label>Username</label>
                     {errors.email ? <p className="formerror">{errors.email}</p> : null}
                 </div>
                 <div className="user-box">
                     <input type="password" name="password"
-                        value={data.password} onChange={handleChange} />
+                        value={data.password} onChange={handleChange}
+                        placeholder="qweqwe123" />
                     <label>Password</label>
                     {errors.password ? <p className="formerror">{errors.password}</p> : null}
                 </div><center>
