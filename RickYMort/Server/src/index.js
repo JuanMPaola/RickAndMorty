@@ -5,6 +5,8 @@ const PORT = 3001;
 
 const router = require("./routes/index")
 
+const { conn } = require('./DB_connection');
+
 server.use(express.json())
 server.use(morgan("dev"))
 
@@ -25,6 +27,7 @@ server.use((req, res, next) => {
 server.use("/rickandmorty", router)
 
 server.listen(PORT, () => {
+    conn.sync()
     console.log('Server raised in port: ' + PORT);
 })
 
